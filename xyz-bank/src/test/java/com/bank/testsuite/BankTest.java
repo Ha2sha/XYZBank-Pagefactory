@@ -41,7 +41,7 @@ public class BankTest extends TestBase {
         //	enter FirstName
         addCustomerPage.enterFirstName("Smita");
         //	enter LastName
-        addCustomerPage.enterLastName("Pipaliya");
+        addCustomerPage.enterLastName("Patel");
         //	enter PostCode
         addCustomerPage.enterPostCode("HA45RH");
         //	click On "Add Customer" Button
@@ -53,16 +53,19 @@ public class BankTest extends TestBase {
         Assert.assertEquals(expectedMessage, actualMessage, "Actual text does not match expected text");
         //	click on "ok" button on popup.
         addCustomerPage.clickOkOnAlert();
+        addCustomerPage.clickHomeButton();
+
     }
 
     @Test(priority = 2, groups = {"sanity", "smoke", "regression"})
-    public void bankManagerShouldOpenAccountSuccessfully() {
+        public void bankManagerShouldOpenAccountSuccessfully() {
+        //bankManagerShouldAddCustomerSuccessfully();
         // click On "Bank Manager Login" Tab
         homePage.clickBankManagerLoginButton();
         //	click On "Open Account" Tab
         bankManagerLoginPage.clickOpenAccountButton();
         //	Search customer that created in first test
-        openAccountPage.selectCustomerJustAddedDropDown("Harry Potter");
+        openAccountPage.selectCustomerJustAddedDropDown("Smita Patel");
         //	Select currency "Pound"
         openAccountPage.selectCurrencyDropDown("Pound");
         //	click on "process" button
@@ -74,14 +77,17 @@ public class BankTest extends TestBase {
         Assert.assertEquals(expectedMessage, actualMessage, "Actual text does not match expected text");
         //	click on "ok" button on popup.
         openAccountPage.clickOkOnAlert();
+        openAccountPage.clickHomeButton();
     }
 
     @Test(priority = 3, groups = {"smoke", "regression"})
     public void customerShouldLoginAndLogoutSuccessfully() {
+//        bankManagerShouldOpenAccountSuccessfully();
+//        openAccountPage.clickHomeButton();
         // click on "Customer Login" Tab
         homePage.clickCustomerLoginBtnButton();
         //	search customer that you created.
-        customerLoginPage.selectNameFromDropDownMenu("Harry Potter");
+        customerLoginPage.selectNameFromDropDownMenu("Smita Patel");
         //	click on "Login" Button
         customerLoginPage.clickLoginButton();
         //	verify "Logout" Tab displayed.
@@ -94,14 +100,17 @@ public class BankTest extends TestBase {
         String expectedMessage1 = "Your Name";
         String actualMessage1 = customerLoginPage.getYourNameText();
         Assert.assertEquals(expectedMessage1, actualMessage1, "User has not logged out successfully");
+        openAccountPage.clickHomeButton();
     }
 
     @Test(priority = 4, groups = {"smoke", "regression"})
     public void customerShouldDepositMoneySuccessfully() {
+//        bankManagerShouldOpenAccountSuccessfully();
+//        openAccountPage.clickHomeButton();
         //  click on "Customer Login" Tab
         homePage.clickCustomerLoginBtnButton();
         //	search customer that you created.
-        customerLoginPage.selectNameFromDropDownMenu("Harry Potter");
+        customerLoginPage.selectNameFromDropDownMenu("Smita Patel");
         //	click on "Login" Button
         customerLoginPage.clickLoginButton();
         //	click on "Deposit" Tab
@@ -114,22 +123,20 @@ public class BankTest extends TestBase {
         String expectedMessage = "Deposit Successful";
         String actualMessage = accountPage.verifyDepositSuccessfulText();
         Assert.assertEquals(expectedMessage, actualMessage, "Actual text does not match expected text");
+        accountPage.clickHomeButton();
     }
 
     @Test(priority = 5, groups = {"regression"})
     public void customerShouldWithdrawMoneySuccessfully() throws InterruptedException {
+        //customerShouldDepositMoneySuccessfully();
+         // openAccountPage.clickHomeButton();
         // click on "Customer Login" Tab
         homePage.clickCustomerLoginBtnButton();
         //	search customer that you created.
-        customerLoginPage.selectNameFromDropDownMenu("Harry Potter");
+        customerLoginPage.selectNameFromDropDownMenu("Smita Patel");
         //	click on "Login" Button
         customerLoginPage.clickLoginButton();
-
-        accountPage.clickDepositButton();
-        accountPage.enterDepositAmount("100");
-        accountPage.clickSmallDepositButton();
-
-        //	click on "Withdrawl" Tab
+         //	click on "Withdrawal" Tab
         accountPage.clickWithdrawalButton();
         //	Enter amount 50
         accountPage.enterWithdrawalAmount("50");

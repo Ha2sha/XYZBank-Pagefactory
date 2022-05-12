@@ -68,7 +68,7 @@ public class CustomListeners implements ITestListener {
     public void onStart(ITestContext iTestContext) {
         reports = ExtentReportManager.getReports();
         test = reports.createTest(iTestContext.getAllTestMethods()[0].getInstance().getClass().getSimpleName())
-                .assignAuthor("Harsha").assignCategory("Smoke");
+                .assignAuthor("Harsha").assignCategory("Regression");
     }
 
     @Override

@@ -26,6 +26,7 @@ public class CustomersPage extends Utility {
         CustomListeners.node.log(Status.PASS, "Find Logout Button : " + logoutMessage);
         Reporter.log("Find Logout Button : " + logoutMessage + "<br>");
         return logoutMessage;
+        //boolean actualText=verifyThatElementIsDisplayed(logoutBtn);
     }
 
     public void clickLogoutButton() {
@@ -33,8 +34,6 @@ public class CustomersPage extends Utility {
         CustomListeners.node.log(Status.PASS, "Click on 'Logout' Button");
         Reporter.log("Click on 'Logout' Button" + "<br>");
     }
-
-
 
 
 }

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Smoke"
-           tests="3"
+<testsuite name="Bank Test"
+           tests="5"
            failures="0"
            errors="0"
            skipped="0"
-           time="6.398">
+           time="7.044">
   <properties />
   
   
-            <testcase name="customerShouldDepositMoneySuccessfully" time="1.704" classname="com.bank.testsuite.BankTest" />
-                <testcase name="customerShouldLoginAndLogoutSuccessfully" time="2.804" classname="com.bank.testsuite.BankTest" />
-                <testcase name="bankManagerShouldOpenAccountSuccessfully" time="1.890" classname="com.bank.testsuite.BankTest" />
+            <testcase name="customerShouldLoginAndLogoutSuccessfully" time="0.880" classname="com.bank.testsuite.BankTest" />
+                <testcase name="customerShouldWithdrawMoneySuccessfully" time="2.530" classname="com.bank.testsuite.BankTest" />
+                <testcase name="bankManagerShouldOpenAccountSuccessfully" time="0.903" classname="com.bank.testsuite.BankTest" />
+                <testcase name="bankManagerShouldAddCustomerSuccessfully" time="1.958" classname="com.bank.testsuite.BankTest" />
+                <testcase name="customerShouldDepositMoneySuccessfully" time="0.773" classname="com.bank.testsuite.BankTest" />
       
 </testsuite>
